@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>GDP</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawAllSheets);
+      function drawAllSheets() {
+        drawSheetName('gdp', 'SELECT A, B, C, D, E, F, G, H',
+            gdpResponseHandler);
+        drawSheetName('gdp', 'SELECT A, H', 
+            topgdpResponseHandler);
+        };
+
+      function drawSheetName(sheetName, query, responseHandler){
+        var queryString = encodeURIComponent(query);
+        var query = new google.visualization.Query("https://docs.google.com/spreadsheets/d/1HO0UJZz5MfXFgs5hMHvO2RHLgPe346hxpHKxIHxRGhY/gviz/tq?sheet="+ sheetName + "&headers=1&tq=" + queryString);
+        query.send(responseHandler);
+        };
+
+      function gdpResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:1, desc:true});
+
+          var formatter = new google.visualization.NumberFormat({prefix: '$', pattern: 'short'});
+          formatter.format(data, 1);
+
+          var options = {height:400,
+                          vAxis:{title:'Spending in Millions($)'},
+                          hAxis:{title:'Country'}
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("gdp_div"));
+
+          chart.draw(data,options);
+
+        }//GDP
+
+      function topgdpResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:1, desc:true});
+
+          var formatter = new google.visualization.NumberFormat({prefix: '$', pattern: 'short'});
+          formatter.format(data, 1);
+
+          var options = {
+              height:400,
+              colorAxis: {colors:['#EE82EE','#4B0082']}, //orange to blue
+              title: 'Top Countries GDP in 2018'
+          }
+
+          var chart = new google.visualization.GeoChart(document.getElementById("top_gdp_div"));
+          chart.draw(data,options);
+      }; //top GDP in 2018
+
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+              <div class="transbox">
+                    <h1><strong>Visualization and Analysis </br>
+                    GDP, Education, Healthcare and Military Spending</strong></h1>
+              </div>
+            </div><!-- logo -->
+            <div id="menubar">
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li  class="selected"><a href="gdp.html">GPD</a></li>
+                    <li><a href="comparison.html">Capita Comparison</a></li>
+                    <li><a href="other.html">Other Comparison</a></li>
+                    <li><a href="interesting.html">Interesting Information</a></li>
+                </ul><!-- menu -->
+            </div><!-- menubar -->
+        </div><!-- header-->
+        <div id="content">
+        <div class="services container">
+                <h2>The World Top 10 Nations GDP</h2>
+                <div id = "gdp_div" style="width:850px; height:500px"></div>
+
+                <h2>Top 10 Nations GDP for 2018</h2>
+                <div id="top_gdp_div" style="width:850px; height:500px"></div>
+
+        </div><!-- services_container -->
+    </div>
+        <div id="footer">   
+            Copyright&copy;
+            <script>
+                var d= new Date();
+                document.write(d.getFullYear());
+            </script>
+            | <a href="https://www.linkedin.com/in/chengzeng92/">Linkedin</a>
+            | <a href="mailto:czeng@gwmail.gwu.com">Contact US</a>
+            | Create by- Cheng Zeng (Jane)
+        </div><!-- footer -->
+    </div><!-- main -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

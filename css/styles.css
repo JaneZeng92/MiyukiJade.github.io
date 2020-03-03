@@ -1,0 +1,251 @@
+.icon {
+  max-width: 150px;
+  margin: 0 auto;
+  display: block;
+}
+
+.services section {
+  text-align: center;
+}
+
+#content{
+  width: 890px;
+  margin: 0 10px 0 10px;
+  border: 3px solid black;
+  background-color:	#E0FFFF;
+  
+}
+
+.container {
+  width: 880px;
+}
+
+html{
+  height: 100%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font: normal 1em arial, sans-serif;
+  padding: 0 16px 16px 0;
+  background: url(../images/water-drop-wallpaper-hd-9.jpg) repeat;
+  color:#111;
+}
+
+p{
+  display: block;
+  font: normal 130% arial, sans-serif;
+  padding: 0 0 16px 0;
+  line-height: 2.7em;
+}
+
+h1{
+  font: normal 300% 'century gothic', arial, sans-serif;
+  color: #111;
+  margin: 0 0 15px 0;
+  padding: 15px 0 5px 0;
+}
+
+h2{
+  font: normal 200% 'century gothic', arial, sans-serif;
+  font-weight: bold;
+  color: #444;
+}
+
+a{
+  outline: none;
+  color: #111;
+  text-decoration: underline;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+ul{
+  margin: 2px 0 22px 17px;
+}
+
+ul li{
+  list-style-type: circle;
+  margin: 0 0 6px 0;
+  padding: 0 0 4px 5px;
+}
+
+#main, #header, #logo, #menubar, #footer{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#main{
+  width: 910px;
+}
+
+
+#logo{
+  width: 890px;
+  position: relative;
+  height: 185px;
+  border: 3px solid black;
+  background: url(../images/download.jfif) repeat-x;
+}
+
+div.transbox {
+  margin: 30px;
+  background-color: #F0FFFF;
+  border: 1.5px solid black;
+  opacity: 0.8;
+}
+
+div.transbox h1 {
+  margin: 5px 5px 5px 5px;
+  font-weight: bold;
+  color: #111111;
+}
+
+
+#menubar{
+  width: 850px;
+  height: 35px;
+  padding:8px 0 0 0 ;
+  margin: -45px 0 0 0;
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+
+
+ul#menu{
+  float: right;
+  margin: 0;
+}
+
+#menu li{
+  float: left;
+  margin: 5px 0 0 0;
+  padding: 0 0 0 6px;
+  list-style: none;
+}
+
+
+#menu li a{
+  letter-spacing: 0;
+  font: normal 135% arial, sans-serif;
+  text-transform: uppercase;
+  display: block;
+  text-decoration: none;
+  padding: 9px 22px 5px 15px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  border: 0;
+}
+
+#menu li.selected a{
+  height: 25px;
+  color:#111111;
+  font-weight: bold;
+  padding: 7px 22px 5px 16px;
+}
+
+ul#menu li.selected{
+  margin: 7px 15px 0 0 ;
+  font-weight: bold;
+  background: #f8f8f8;
+}
+
+ul#menu li a:hover{
+  color:#CACFD2;
+}
+
+
+#content ul{
+  margin: 2px 0 22px 0;
+}
+
+
+#content ul li{
+  list-style: none;
+  background: url(../images/bullet.png) no-repeat;
+  margin: 0 0 6px 0;
+  padding: 0 0 4px 25px;
+  line-height: 1.5em;
+}
+
+#footer{
+  width: 890px;
+  height: 35px;
+  padding: 15px 0 4px 0;
+  text-align: center;
+  background:		#696969;
+  color: #F0FFFF;
+  border: 3px solid black;
+  letter-spacing: 0.2em;
+  font-size: 100%;
+}
+
+.custom-select {
+  position: relative;
+  margin: 20px ;
+  font-weight: bold;
+  font: normal 135% arial, sans-serif;
+}
+
+.custom-select select {
+  display: block;
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: rgb(235, 174, 174);
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #F0FFFF;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  font-size: 13px;
+  float: right;
+  margin-left: 5px;
+}
