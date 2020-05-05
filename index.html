@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home</title>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+              <div class="transbox">
+                    <h1><strong><center> The World Happniess Report </center></strong></h1>
+              </div>
+            </div><!-- logo -->
+            <div id="menubar">
+                <ul id="menu">
+                    <li class="selected"><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                    <li><a href="world_rank.html"><i class="fa fa-globe"></i> World Rank</a></li>
+                    <li><a href="region.html"><i class="fa fa-map-marker"></i> Region Rank</a></li>
+                    <li><a href="average.html"><i class="fa fa-bar-chart"></i> Average</a></li>
+                    <li><a href="interesting.html"><i class="fa fa-pie-chart"></i> Other Info</a></li>
+                </ul><!-- menu -->
+            </div><!-- menubar -->
+        </div><!-- header-->
+        <div id="content">
+          <div class="services container">
+            <h2><i class="fa fa-info-circle"></i> Introduction</h2>
+            <p>
+              National happiness is one of the most important things for people to see whether the country is good for living and government can make correct decision. 
+              This report <q> gained recognition as governments, organizations and civil society increasingly use happiness indicators to inform their policy-making decisions. </q>
+              The purpose of choosing this task is to find out which factors are more important for people to live a happy life. Based on the results, 
+              people and countries can focus on more critical factors to achieve a higher level of happiness. <br>
+              This project uses visualization to help people to understand the factor that cause the difference of national happiness index.
+            </p>
+
+            <h2><i class="fa fa-database"></i> Dataset</h2>
+            <p>
+                The datasets include <strong>155 countries' economy, family, health, freedom, trust, generosity, and dystopia residual</strong> score in 2015.<br />
+                The datasets collected from <strong><a href="https://www.kaggle.com/unsdsn/world-happiness" target="_blank">World Happiness Report</a></strong>.
+                <br>
+                <br>
+                <strong>**<a href="https://worldhappiness.report/faq/">What is Dystopia?</a></strong><br>
+                <q>Dystopia is an imaginary country that has the world’s least-happy people. 
+                The purpose in establishing Dystopia is to have a benchmark against which all countries can be favorably compared 
+                (no country performs more poorly than Dystopia) in terms of each of the six key variables, thus allowing each sub-bar 
+                to be of positive (or zero, in six instances) width. The lowest scores observed for the six key variables, 
+                therefore, characterize Dystopia. Since life would be very unpleasant in a country with the world’s lowest incomes, 
+                lowest life expectancy, lowest generosity, most corruption, least freedom, and least social support, 
+                it is referred to as “Dystopia,” in contrast to Utopia.</q> 
+            </p>
+            <h2><i class="fa fa-map-marker" aria-hidden="true"></i> Region</h2>
+            <p>
+                In this dataset, we separate the 155 countries to 10 different regions: </br>
+                <strong>Africa</strong>: <a href="https://en.wikipedia.org/wiki/MENA">Middle East and Northern Africa</a>, <a href="https://en.wikipedia.org/wiki/Sub-Saharan_Africa">Sub-Saharan Africa</a> </br>
+                <strong>Americas</strong>: <a href="https://en.wikipedia.org/wiki/Latin_America_and_the_Caribbean">Latin America and Caribbean</a>, <a href="https://en.wikipedia.org/wiki/North_America">North America</a> </br>
+                <strong>Asia</strong>: <a href="https://en.wikipedia.org/wiki/East_Asia">Eastern Asia</a>, <a href="https://en.wikipedia.org/wiki/Southeast_Asia">Southeastern Asia</a>, <a href="https://en.wikipedia.org/wiki/South_Asia">Southern Asia</a></br>
+                <strong>Europe</strong>: <a href="https://en.wikipedia.org/wiki/Central_and_Eastern_Europe">Central and Eastern Europe</a>, <a href="https://en.wikipedia.org/wiki/Western_Europe">Western Europe</a> </br>
+                <strong>Oceania</strong>: <a href="https://en.wikipedia.org/wiki/Australasia">Australia and New Zealand</a> 
+
+            </p>
+            <h2><i class="fa fa-map" aria-hidden="true"></i> The World Map</h2></br>
+            <center><img src="images/world-map-1750.jpg" alt="Image" height = "500" width="850" >
+            <h4><strong><a href="https://en.wikipedia.org/wiki/UN_M49" target="_blank">  Standard Country or Area Codes for Statistical Use </a></h4></center>
+          </div><!-- content container -->
+        </div>
+                
+        <div id="footer">   
+            Copyright&copy;
+            <script>
+                var d= new Date();
+                document.write(d.getFullYear());
+            </script>
+            | <a href="https://www.linkedin.com/in/chengzeng92/">Linkedin</a>
+            | <a href="mailto:czeng@gwmail.gwu.com">Contact US</a>
+            | Create by- Cheng Zeng (Jane)
+        </div><!-- footer -->
+    </div><!-- main -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

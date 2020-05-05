@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Average</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+           google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawAllSheets);
+      function drawAllSheets() {
+        drawSheetName('AVE', 'SELECT A, B', 
+            aveResponseHandler);
+        };
+
+      function drawSheetName(sheetName, query, responseHandler){
+        var queryString = encodeURIComponent(query);
+        var query = new google.visualization.Query("https://docs.google.com/spreadsheets/d/1o9AeiL9ip_xrXrLtA-x2QM3RZHhT1mRJ6ILdnXhjAx0/gviz/tq?sheet="+ sheetName + "&headers=1&tq=" + queryString);
+        query.send(responseHandler);
+        };
+
+      function aveResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Average Happiness'},
+                          hAxis:{title:'Region'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("ave_div"));
+          chart.draw(data,options);
+        }
+      
+
+      
+    </script>
+    
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+              <div class="transbox">
+                <h1><strong><center> The World Happniess Report </center></strong></h1>
+              </div>
+            </div>
+            <div id="menubar">
+                <ul id="menu">
+                  <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                  <li><a href="world_rank.html"><i class="fa fa-globe"></i> World Rank</a></li>
+                  <li><a href="region.html"><i class="fa fa-map-marker"></i> Region Rank</a></li>
+                  <li class="selected"><a href="average.html"><i class="fa fa-bar-chart"></i> Average</a></li>
+                  <li><a href="interesting.html"><i class="fa fa-pie-chart"></i> Other Info</a></li>
+                </ul><!-- menu -->
+            </div><!-- menubar -->
+        </div><!-- header-->
+        <div id="content">
+        <div class="services container">
+            <div class="custom-select" style="width:200px;">
+                <select onChange="window.location.href=this.value">
+                  <option value="average.html">Happiness Score Average</option>
+                  <option value="average1.html">Factors Average</option>
+                </select>
+              </div>
+            <h1><i class="fa fa-bar-chart"></i> Average Happiness Score</h1>
+            <button class="accordion">Analysis</button>
+            <div class="panel">
+              <p>
+                The Average happiness score shows that Australia and New Zealand (7.285), North America (7.273) and Western Europe (6.896) 
+                are the top 3 region that has the highest average happiness score. Sub-Saharan Africa has the lowest average happiness score. 
+                As we mention before that the reason that Sub-Saharan Africa people unsatisfied their living situation. 
+                On the other hand, the three region that has high average happiness score is because they are <a href="https://www.nzherald.co.nz/lifestyle/news/article.cfm?c_id=6&objectid=12013078">creating a lot of good conditions 
+                for good lives. </a>
+                </p>
+            </div>
+            
+            <div id = "ave_div" style="width:850px; height:500px"></div>
+
+
+
+        </div><!-- services_container -->
+      </div>
+        <div id="footer">   
+            Copyright&copy;
+            <script>
+                var d= new Date();
+                document.write(d.getFullYear());
+            </script>
+            | <a href="https://www.linkedin.com/in/chengzeng92/">Linkedin</a>
+            | <a href="mailto:czeng@gwmail.gwu.com">Contact US</a>
+            | Create by- Cheng Zeng (Jane)
+        </div><!-- footer -->
+    </div><!-- main -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+</body>
+</html>
