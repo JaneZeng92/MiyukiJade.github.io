@@ -5,87 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Introduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home</title>
 </head>
 <body>
     <div id="main">
         <div id="header">
             <div id="logo">
               <div class="transbox">
-                    <h1><strong>Visualization and Analysis </br>
-                    GDP, Education, Healthcare and Military Spending</strong></h1>
+                    <h1><strong><center> The World Happniess Report </center></strong></h1>
               </div>
             </div><!-- logo -->
             <div id="menubar">
                 <ul id="menu">
-                    <li  class="selected"><a href="index.html">Home</a></li>
-                    <li><a href="gdp.html">GPD</a></li>
-                    <li><a href="comparison.html">Capita Comparison</a></li>
-                    <li><a href="other.html">Other Comparison</a></li>
-                    <li><a href="interesting.html">Interesting Information</a></li>
+                    <li class="selected"><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                    <li><a href="world_rank.html"><i class="fa fa-globe"></i> World Rank</a></li>
+                    <li><a href="region.html"><i class="fa fa-map-marker"></i> Region Rank</a></li>
+                    <li><a href="average.html"><i class="fa fa-bar-chart"></i> Average</a></li>
+                    <li><a href="interesting.html"><i class="fa fa-pie-chart"></i> Other Info</a></li>
                 </ul><!-- menu -->
             </div><!-- menubar -->
         </div><!-- header-->
         <div id="content">
           <div class="services container">
-            <h2>Introduction</h2>
+            <h2><i class="fa fa-info-circle"></i> Introduction</h2>
             <p>
-              In this project, we are compareing several datasets of top 10 nations, so we can visulize and analysis
-              the difference of these countries.
-              
-              
+              National happiness is one of the most important things for people to see whether the country is good for living and government can make correct decision. 
+              This report <q> gained recognition as governments, organizations and civil society increasingly use happiness indicators to inform their policy-making decisions. </q>
+              The purpose of choosing this task is to find out which factors are more important for people to live a happy life. Based on the results, 
+              people and countries can focus on more critical factors to achieve a higher level of happiness. <br>
+              This project uses visualization to help people to understand the factor that cause the difference of national happiness index.
             </p>
-            <h2>Dataset</h2>
-            <p>
-                The datasets include <strong>GDP, Education, Healthcare and Military Spending</strong>.<br />
-                The datasets collected from <strong><a href="https://data.worldbank.org/" target="_blank">World Bank</a></strong>.
-            </p>
-            <h2>Countries</h2>
-            <p>Introduction of the 10 countries</p>
-            <div class="row">
-          
-              <section class = "col-sm-6 col-md-4 col-lg-4">
-                <img class="icon" src="images/australia.png" alt="Icon">
-                <h4><strong><a href="https://en.wikipedia.org/wiki/Australia" target="_blank"> Austrilia </a></h4>
-              </section>
-              <section class = "col-sm-6 col-md-4 col-lg-4">
-                <img class="icon" src="images/canada.png" alt="Icon">
-                <h4><strong><a href="https://en.wikipedia.org/wiki/Canada" target="_blank"> Canada </a></h4>
-              </section>
-              <section class = "col-sm-6 col-md-4 col-lg-4">
-                <img class="icon" src="images/china.png" alt="Icon">
-                <h4><strong><a href="https://en.wikipedia.org/wiki/China" target="_blank"> China </a></h4>
-              </section>
 
-              <section class = "col-sm-6 col-md-4 col-lg-4">
-                <img class="icon" src="images/germany.png" alt="Icon">
-                <h4><strong><a href="https://en.wikipedia.org/wiki/Germany" target="_blank"> Germany </a></h4>
-              </section>
-              <section class = "col-sm-6 col-md-4 col-lg-4">
-                <img class="icon" src="images/italy.png" alt="Icon">
-                <h4><strong><a href="https://en.wikipedia.org/wiki/Italy" target="_blank"> Italy </a></h4>
-              </section>
-              <section class = "col-sm-6 col-md-4 col-lg-4">
-                <img class="icon" src="images/japan.png" alt="Icon">
-                <h4><strong><a href="https://en.wikipedia.org/wiki/Japan" target="_blank"> Japan </a></h4>
-              </section>
-              <section class = "col-sm-6 col-md-4 col-lg-4">
-                <img class="icon" src="images/france.png" alt="Icon">
-                <h4><strong><a href="https://en.wikipedia.org/wiki/France" target="_blank"> France </a></h4>
-              </section>
-              <section class = "col-sm-6 col-md-4 col-lg-4">
-                <img class="icon" src="images/russia.png" alt="Icon">
-                <h4><strong><a href="https://en.wikipedia.org/wiki/Russia" target="_blank"> Russia </a></h4>
-              </section>
-              <section class = "col-sm-6 col-md-4 col-lg-4">
-                <img class="icon" src="images/uk.png" alt="Icon">
-                <h4><strong><a href="https://en.wikipedia.org/wiki/United_Kingdom" target="_blank"> United Kingdom </a></h4>
-              </section>
-              <section class = "col-sm-6 col-md-4 col-lg-4">
-                <img class="icon" src="images/us.png" alt="Icon">
-                <h4><strong><a href="https://en.wikipedia.org/wiki/United_States" target="_blank"> United States </a></h4>
-              </section>
-            </div><!-- row -->   
+            <h2><i class="fa fa-database"></i> Dataset</h2>
+            <p>
+                The datasets include <strong>155 countries' economy, family, health, freedom, trust, generosity, and dystopia residual</strong> score in 2015.<br />
+                The datasets collected from <strong><a href="https://www.kaggle.com/unsdsn/world-happiness" target="_blank">World Happiness Report</a></strong>.
+                <br>
+                <br>
+                <strong>**<a href="https://worldhappiness.report/faq/">What is Dystopia?</a></strong><br>
+                Dystopia is an imaginary country that has the world’s least-happy people. 
+                The purpose in establishing Dystopia is to have a benchmark against which all countries can be favorably compared 
+                (no country performs more poorly than Dystopia) in terms of each of the six key variables, thus allowing each sub-bar 
+                to be of positive (or zero, in six instances) width. The lowest scores observed for the six key variables, 
+                therefore, characterize Dystopia. Since life would be very unpleasant in a country with the world’s lowest incomes, 
+                lowest life expectancy, lowest generosity, most corruption, least freedom, and least social support, 
+                it is referred to as “Dystopia,” in contrast to Utopia.
+            </p>
+            <h2><i class="fa fa-map-marker" aria-hidden="true"></i> Region</h2>
+            <p>
+                In this dataset, we separate the 155 countries to 10 different regions: </br>
+                <strong>Africa</strong>: Middle East and Northern Africa, Sub-Saharan Africa </br>
+                <strong>Americas</strong>: Latin America and Caribbean, North America </br>
+                <strong>Asia</strong>: Eastern Asia, Southeastern Asia, Southern Asia </br>
+                <strong>Europe</strong>: Central and Eastern Europe, Western Europe </br>
+                <strong>Oceania</strong>: Australia and New Zealand
+
+            </p>
+            <h2><i class="fa fa-globe" aria-hidden="true"></i> The World Map</h2></br>
+            <center><img src="images/world-map-1750.jpg" alt="Image" height = "500" width="850" >
+            <h4><strong><a href="https://en.wikipedia.org/wiki/UN_M49" target="_blank">  Standard Country or Area Codes for Statistical Use </a></h4></center>
           </div><!-- content container -->
         </div>
                 

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Region</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+           google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawAllSheets);
+      function drawAllSheets() {
+        drawSheetName('WE', 'SELECT A, D', 
+            WEResponseHandler);
+        drawSheetName('WE', 'SELECT A, F', 
+            WEecoResponseHandler);
+        drawSheetName('WE', 'SELECT A, G', 
+            WEfamilyResponseHandler);     
+        drawSheetName('WE', 'SELECT A, H', 
+            WEhealthResponseHandler);
+        drawSheetName('WE', 'SELECT A, I',
+            WEfreeResponseHandler);
+        drawSheetName('WE', 'SELECT A, J', 
+            WEtrustResponseHandler);
+        drawSheetName('WE', 'SELECT A, K', 
+            WEgeneResponseHandler);
+        };
+
+      function drawSheetName(sheetName, query, responseHandler){
+        var queryString = encodeURIComponent(query);
+        var query = new google.visualization.Query("https://docs.google.com/spreadsheets/d/1o9AeiL9ip_xrXrLtA-x2QM3RZHhT1mRJ6ILdnXhjAx0/gviz/tq?sheet="+ sheetName + "&headers=1&tq=" + queryString);
+        query.send(responseHandler);
+        };
+
+      function WEResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          region: '150',
+                          vAxis:{title:'Happiness Score'},
+                          hAxis:{title:'Country'},
+                          colorAxis: {colors: ['cornsilk', 'maroon']}
+                        };
+
+          var chart = new google.visualization.GeoChart(document.getElementById("WErank_div"));
+
+          chart.draw(data,options);
+
+        }
+
+      function WEecoResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Economy'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("WEeco_div"));
+
+          chart.draw(data,options);
+        }
+
+      function WEfamilyResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Family'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("WEfamily_div"));
+
+          chart.draw(data,options);
+        }
+
+      function WEhealthResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Health'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("WEhealth_div"));
+
+          chart.draw(data,options);
+        }
+      
+      function WEfreeResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Freedom'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("WEfree_div"));
+
+          chart.draw(data,options);
+        }
+      
+      function WEtrustResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Trust'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("WEtrust_div"));
+
+          chart.draw(data,options);
+        }
+
+      function WEgeneResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Generosity'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("WEgene_div"));
+
+          chart.draw(data,options);
+        }
+
+      
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+              <div class="transbox">
+                <h1><strong><center> The World Happniess Report </center></strong></h1>
+              </div>
+            </div>
+            <div id="menubar">
+                <ul id="menu">
+                  <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                  <li><a href="world_rank.html"><i class="fa fa-globe"></i> World Rank</a></li>
+                  <li class="selected"><a href="region.html"><i class="fa fa-map-marker"></i> Region Rank</a></li>
+                  <li><a href="average.html"><i class="fa fa-bar-chart"></i> Average</a></li>
+                  <li><a href="interesting.html"><i class="fa fa-pie-chart"></i> Other Info</a></li>
+                </ul><!-- menu -->
+            </div><!-- menubar -->
+        </div><!-- header-->
+        <div id="content">
+        <div class="services container">
+            <div class="custom-select" style="width:200px;">
+                <select onChange="window.location.href=this.value">
+                  <option value="region10.html">Western Europe</option>
+                  <option value="region.html">Australia and New Zealand</option>
+                  <option value="region2.html">Central and Eastern Europe</option>
+                  <option value="region3.html">Eastern Asia</option>
+                  <option value="region4.html">Latin America and Caribbean</option>
+                  <option value="region5.html">Middle East and Northern Africa</option>
+                  <option value="region6.html">North America</option>
+                  <option value="region7.html">Southeastern Asia</option>
+                  <option value="region8.html">Southern Asia</option>
+                  <option value="region9.html">Sub-Saharan Africa</option>
+                </select>
+              </div>
+            <h1>Western Europe</h1>
+            <button class="accordion">Analysis</button>
+            <div class="panel">
+              <p>
+                In Western Europe, there are 7 countries in the top 10 happiness score. Switzerland is the top 1. 
+                <a href="https://www.thelocal.ch/20200115/switzerland-ranked-best"> Switzerland scored high with regard to political and economic stability, transparency and equality. 
+                Switzerland was also ranked second best in the world for conducting business and was considered the second-most trustworthy country.</a>
+                </p>
+            </div>
+            <h2>Happiness Score</h2>
+            <div id = "WErank_div" style="width:850px; height:500px"></div>
+            <h2>Economy</h2>
+            <div id = "WEeco_div" style="width:850px; height:500px"></div>
+            <h2>Family</h2>
+            <div id = "WEfamily_div" style="width:850px; height:500px"></div>
+            <h2>Health</h2>
+            <div id = "WEhealth_div" style="width:850px; height:500px"></div>
+            <h2>Freedom</h2>
+            <div id = "WEfree_div" style="width:850px; height:500px"></div>
+            <h2>Trust</h2>
+            <div id = "WEtrust_div" style="width:850px; height:500px"></div>
+            <h2>Generosity</h2>
+            <div id = "WEgene_div" style="width:850px; height:500px"></div>
+
+        </div><!-- services_container -->
+      </div>
+        <div id="footer">   
+            Copyright&copy;
+            <script>
+                var d= new Date();
+                document.write(d.getFullYear());
+            </script>
+            | <a href="https://www.linkedin.com/in/chengzeng92/">Linkedin</a>
+            | <a href="mailto:czeng@gwmail.gwu.com">Contact US</a>
+            | Create by- Cheng Zeng (Jane)
+        </div><!-- footer -->
+    </div><!-- main -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+</body>
+</html>

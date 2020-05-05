@@ -11,7 +11,7 @@
 #content{
   width: 890px;
   margin: 0 10px 0 10px;
-  border: 3px solid black;
+  /* border: 3px solid black; */
   background-color:	#E0FFFF;
   
 }
@@ -28,10 +28,12 @@ html{
   margin: 0;
   padding: 0;
 }
+
 body{
   font: normal 1em arial, sans-serif;
   padding: 0 16px 16px 0;
-  background: url(../images/water-drop-wallpaper-hd-9.jpg) repeat;
+  background: url(../images/wannahappy.jpg) repeat;
+  background-size: cover;
   color:#111;
 }
 
@@ -89,16 +91,11 @@ ul li{
   width: 890px;
   position: relative;
   height: 185px;
-  border: 3px solid black;
-  background: url(../images/download.jfif) repeat-x;
+  background: url(../images/happniess.jpg) no-repeat;
+  background-size:890px 200px;
+
 }
 
-div.transbox {
-  margin: 30px;
-  background-color: #F0FFFF;
-  border: 1.5px solid black;
-  opacity: 0.8;
-}
 
 div.transbox h1 {
   margin: 5px 5px 5px 5px;
@@ -139,7 +136,7 @@ ul#menu{
   text-decoration: none;
   padding: 9px 22px 5px 15px;
   text-align: center;
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-weight: bold;
   border: 0;
 }
@@ -154,11 +151,11 @@ ul#menu{
 ul#menu li.selected{
   margin: 7px 15px 0 0 ;
   font-weight: bold;
-  background: #f8f8f8;
+  background: #ee82ee;
 }
 
 ul#menu li a:hover{
-  color:#CACFD2;
+  color:#ff1493;
 }
 
 
@@ -249,3 +246,5 @@ ul#menu li a:hover{
   float: right;
   margin-left: 5px;
 }
+
+

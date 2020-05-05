@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Region</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+           google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawAllSheets);
+      function drawAllSheets() {
+        drawSheetName('AZ', 'SELECT A, D', 
+            azResponseHandler);
+        drawSheetName('AZ', 'SELECT A, F', 
+            azecoResponseHandler);
+        drawSheetName('AZ', 'SELECT A, G', 
+            azfamilyResponseHandler);     
+        drawSheetName('AZ', 'SELECT A, H', 
+            azhealthResponseHandler);
+        drawSheetName('AZ', 'SELECT A, I',
+            azfreeResponseHandler);
+        drawSheetName('AZ', 'SELECT A, J', 
+            aztrustResponseHandler);
+        drawSheetName('AZ', 'SELECT A, K', 
+            azgeneResponseHandler);
+        };
+
+      function drawSheetName(sheetName, query, responseHandler){
+        var queryString = encodeURIComponent(query);
+        var query = new google.visualization.Query("https://docs.google.com/spreadsheets/d/1o9AeiL9ip_xrXrLtA-x2QM3RZHhT1mRJ6ILdnXhjAx0/gviz/tq?sheet="+ sheetName + "&headers=1&tq=" + queryString);
+        query.send(responseHandler);
+        };
+
+      function azResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          region: '053',
+                          vAxis:{title:'Happiness Score'},
+                          hAxis:{title:'Country'},
+                          colorAxis: {colors: ['yellow', 'red']}
+                        };
+
+          var chart = new google.visualization.GeoChart(document.getElementById("azrank_div"));
+
+          chart.draw(data,options);
+
+        }
+
+      function azecoResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Economy'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("azeco_div"));
+
+          chart.draw(data,options);
+        }
+
+      function azfamilyResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Family'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("azfamily_div"));
+
+          chart.draw(data,options);
+        }
+
+      function azhealthResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Health'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("azhealth_div"));
+
+          chart.draw(data,options);
+        }
+      
+      function azfreeResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Freedom'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("azfree_div"));
+
+          chart.draw(data,options);
+        }
+      
+      function aztrustResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Trust'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("aztrust_div"));
+
+          chart.draw(data,options);
+        }
+
+      function azgeneResponseHandler(response){
+          var data = response.getDataTable();
+          data.sort({column:0, desc:true});
+
+          var options = {height:400,
+                          vAxis:{title:'Generosity'},
+                          hAxis:{title:'Country'},
+                        };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("azgene_div"));
+
+          chart.draw(data,options);
+        }
+
+      
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+              <div class="transbox">
+                <h1><strong><center> The World Happniess Report </center></strong></h1>
+              </div>
+            </div>
+            <div id="menubar">
+                <ul id="menu">
+                  <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                  <li><a href="world_rank.html"><i class="fa fa-globe"></i> World Rank</a></li>
+                  <li class="selected"><a href="region.html"><i class="fa fa-map-marker"></i> Region Rank</a></li>
+                  <li><a href="average.html"><i class="fa fa-bar-chart"></i> Average</a></li>
+                  <li><a href="interesting.html"><i class="fa fa-pie-chart"></i> Other Info</a></li>
+                </ul><!-- menu -->
+            </div><!-- menubar -->
+        </div><!-- header-->
+        <div id="content">
+        <div class="services container">
+            <div class="custom-select" style="width:200px;">
+                <select onChange="window.location.href=this.value">
+                  <option value="region.html">Australia and New Zealand</option>
+                  <option value="region2.html">Central and Eastern Europe</option>
+                  <option value="region3.html">Eastern Asia</option>
+                  <option value="region4.html">Latin America and Caribbean</option>
+                  <option value="region5.html">Middle East and Northern Africa</option>
+                  <option value="region6.html">North America</option>
+                  <option value="region7.html">Southeastern Asia</option>
+                  <option value="region8.html">Southern Asia</option>
+                  <option value="region9.html">Sub-Saharan Africa</option>
+                  <option value="region10.html">Western Europe</option>
+                </select>
+              </div>
+            <h1>Australia and New Zealand</h1>
+            <button class="accordion">Analysis</button>
+            <div class="panel">
+              <p>
+                Even though Australia has highest GDP, life expectancy and freedom, New Zealand has higher happiness score than Australia. 
+                Therefore, we can see that family, trust and generosity are more important to score the happiness. 
+                </p>
+            </div>
+            <h2>Happiness Score</h2>
+            <div id = "azrank_div" style="width:850px; height:500px"></div>
+            <h2>Economy</h2>
+            <div id = "azeco_div" style="width:850px; height:500px"></div>
+            <h2>Family</h2>
+            <div id = "azfamily_div" style="width:850px; height:500px"></div>
+            <h2>Health</h2>
+            <div id = "azhealth_div" style="width:850px; height:500px"></div>
+            <h2>Freedom</h2>
+            <div id = "azfree_div" style="width:850px; height:500px"></div>
+            <h2>Trust</h2>
+            <div id = "aztrust_div" style="width:850px; height:500px"></div>
+            <h2>Generosity</h2>
+            <div id = "azgene_div" style="width:850px; height:500px"></div>
+
+        </div><!-- services_container -->
+      </div>
+        <div id="footer">   
+            Copyright&copy;
+            <script>
+                var d= new Date();
+                document.write(d.getFullYear());
+            </script>
+            | <a href="https://www.linkedin.com/in/chengzeng92/">Linkedin</a>
+            | <a href="mailto:czeng@gwmail.gwu.com">Contact US</a>
+            | Create by- Cheng Zeng (Jane)
+        </div><!-- footer -->
+    </div><!-- main -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+</body>
+</html>
